@@ -1,7 +1,7 @@
 <template>
     <div class="stage">
-        <h1>Stage Whatevah</h1>
-        <h1>{{ $route.params.id }}</h1>
+        <h1>Stage {{ $route.params.id }}</h1>
+        <router-link to="/">Back to Home</router-link>
     </div>
 </template>
 
