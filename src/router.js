@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Intro from './views/Intro.vue'
 import Stage from './views/Stage.vue'
+import Recommendation from './views/Recommendation.vue'
 
 Vue.use(Router)
 
@@ -24,6 +25,11 @@ export default new Router({
             path: '/stage/:id',
             name: 'stage',
             component: Stage
+        },
+        {
+            path: '/recommendation/:id',
+            name: 'recommendation',
+            component: Recommendation
         }
     ]
 })
