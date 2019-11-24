@@ -1,5 +1,7 @@
 <template>
     <div class="home">
+        <br>
+        <br>
         <img src="@/assets/caution.png">
         <div id="main">
             <br>
