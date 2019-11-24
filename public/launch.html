@@ -1,0 +1,14 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <script src="./fhir-client.js"></script>
+    <script>
+        FHIR.oauth2.authorize({
+            client_id: "my_web_app",
+            scope: "launch online_access patient/*.read"
+        });
+    </script>
+</head>
+<body>Loading...</body>
+</html>
