@@ -7,19 +7,6 @@
                 <b-button pill variant="primary" to="/intro">Continue to SORES for DAYZZZ</b-button>
             </router-link>
         </div>
-        <div id="data">
-            <h1> 
-                Hello 
-                <span id="patient_name">...</span>!
-            </h1>
-
-            <table id="obs_table" border="1">
-                <tr>
-                    <td>Code</td>
-                    <td>Value</td>
-                </tr>
-            </table>
-        </div>
     </div>
 </template>
 

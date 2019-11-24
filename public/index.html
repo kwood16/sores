@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title>SORES for DAYZZZ</title>
-    <script src="node_modules/fhirclient/fhir-client.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/fhirclient@0.1.12/fhir-client.min.js"></script>
     <script>
       FHIR.oauth2.ready()
           .then(client => client.request("Patient"))
