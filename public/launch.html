@@ -4,11 +4,21 @@
 <head>
     <script src="//cdn.jsdelivr.net/npm/fhirclient@0.1.12/fhir-client.min.js"></script>
     <script>
+        // FHIR.oauth2.ready(function(fhirClient){
+        //     currentUserFhirUrl = fhirClient.userId;
+        // });
         FHIR.oauth2.authorize({
             client_id: "my_web_app",
             scope: "launch online_access patient/*.read"
         });
     </script>
 </head>
-<body>Loading...</body>
+<body>
+    <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+    </div>
+
+</body>
 </html>
