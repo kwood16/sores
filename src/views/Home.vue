@@ -17,7 +17,7 @@ import axios from 'axios';
 
 export default {
 created() {
-    axios.get('https://api.logicahealth.org/STU301withSynthea/open/Patient?_id=smart-1796238')
+    axios.get('https://api.logicahealth.org/STU301withSynthea/open/Patient?_id=smart-1577780')
         .then(response => {
             console.log('response', response.data.entry[0].resource);
         });
