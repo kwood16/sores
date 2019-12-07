@@ -13,6 +13,7 @@
     "core-js": "^3.3.2",
     "fhirclient": "^2.1.0",
     "jquery": "^3.4.1",
+    "serialize-javascript": "^2.1.1",
     "vue": "^2.6.10",
     "vue-router": "^3.1.3"
   },
