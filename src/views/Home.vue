@@ -8,6 +8,7 @@
         <img src="@/assets/caution.png">
         <div id="main">
             <br>
+            {{ pat_info }}
             <router-link to="/intro">
                 <b-button pill variant="primary" to="/intro">Continue to SORES for DAYZZZ</b-button>
             </router-link>
@@ -17,64 +18,35 @@
 
 <script>
 import axios from 'axios';
+import * as FHIR from 'fhirclient'
 
-<<<<<<< HEAD
-=======
+FHIR.oauth2.ready(function(smart){
+        var patient = smart.patient;
+        console.log(patient)
+//   .then(client => client.request("Patient"))
+//   .then(console.log(client))
+//   .catch(console.error);
+// FHIR.oauth2.ready(function(fhirClient){
+
+});
+
+FHIR.oauth2.ready().then(response => { console.log(response) })
+
 export default {
+data () {
+    return {
+      pat_info: null
+    }
+  },
 created() {
-    axios.get('https://api.logicahealth.org/STU301withSynthea/open/Patient?_id=smart-1577780')
-        .then(response => {
-            console.log('response', response.data.entry[0].resource);
-        });
-}
-// function getPatientName (pt) {
-//   if (pt.name) {
-//     var names = pt.name.map(function(name) {
-//       return name.given.join(" ") + " " + name.family.join(" ");
-//     });
-//     return names.join(" / ")
-//   } else {
-//     return "anonymous";
-//   }
-// }
+    axios.get('https://api.logicahealth.org/Testapalooza/open/Patient?_id=CUSTO-1005198-02')
+        .then(response => (this.pat_info = response)
 
-// function displayPatient (pt) {
-//   document.getElementById('patient_name').innerHTML = getPatientName(pt);
-// }
+        );
+    }
 
-// function displayObservation (observation) {
-//   var table = document.getElementById("obs_table");
-//   var row = table.insertRow(1);
-//   var cell1 = row.insertCell(0);
-//   var cell2 = row.insertCell(1);
-//   cell1.innerHTML = observation.code.coding[0].code;
-//   cell2.innerHTML = observation.valueQuantity.value;
-// }
-
-// var demo = {
-//     serviceUrl: "https://api.hspconsortium.org/hspcdemo/open",
-//     patientId: "BILIBABY"
-// };
-
-// // Create a FHIR client (server URL, patient id in `demo`)
-// var smart = FHIR.client(demo),
-//     pt = smart.patient;
-
-// // Create a patient banner by fetching + rendering demographics
-// smart.patient.read().then(function(pt) {
-//   displayPatient (pt);
-// });
-
-// // A more advanced query: search for active Prescriptions, including med details
-// smart.patient.api.fetchAll({type: "Observation"})
-// .then(function(results, refs) {
-//   results.forEach(function(observation){
-//     displayObservation(observation);
-//   });
-// });
 }
 
->>>>>>> 0ba6f7d05328fc271231e8bfe9929e3aea22ba87
 </script>
 
 <style>
