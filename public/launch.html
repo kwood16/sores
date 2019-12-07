@@ -5,8 +5,10 @@
     <script src="//cdn.jsdelivr.net/npm/fhirclient@0.1.12/fhir-client.min.js"></script>
     <script>
         FHIR.oauth2.authorize({
-            client_id: "my_web_app",
-            scope: "launch online_access patient/*.read"
+            client_id: "a35f1fea-3805-4bd1-bafd-848f42a9876c",
+            // redirect_uri: "http://localhost:9090/ /index.html",
+            // scope: "launch online_access patient/*.read"
+            scope: "patient/Patient.read online_access openid profile offline_access patient/Observation.read launch fhirUser"
         });
 
     </script>
