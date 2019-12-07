@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import axios from 'axios';
-import * as FHIR from 'fhirclient'
+// import axios from 'axios';
+// import * as FHIR from 'fhirclient'
 
 export default {
 data () {
@@ -37,14 +37,14 @@ data () {
 
 // }
 created() {
-    FHIR.oauth2.ready()
-        .then(response => {
-            console.log(response);
-            axios.get('https://api.logicahealth.org/Testapalooza/open/Patient?_id=CUSTO-1005198-02')
-                .then(response => {
-                    console.log('response', response.data.entry[0].resource);
-                });
-        });
+    // FHIR.oauth2.ready()
+    //     .then(response => {
+    //         console.log(response);
+    //         axios.get('https://api.logicahealth.org/Testapalooza/open/Patient?_id=CUSTO-1005198-02')
+    //             .then(response => {
+    //                 console.log('response', response.data.entry[0].resource);
+    //             });
+    //     });
     }
 }
 

@@ -6,17 +6,29 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title>SORES for DAYZZZ</title>
+
+    <script src="./nativeFhir.js"></script>
+    <script src="./fhir-client.js"></script>
+
+    <!-- script src="/path/to/fhir-client.js"></script> -->
     
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/fhirclient@0.1.12/fhir-client.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+    <!-- <script src="//cdn.jsdelivr.net/npm/fhirclient@0.1.12/fhir-client.min.js"></script> -->
     
     <script>
+      console.log("INDEX LAUNCH");
+      // FHIR.oauth2.authorize({
+      //     client_id: "a35f1fea-3805-4bd1-bafd-848f42a9876c",
+      //     // redirect_uri: "http://localhost:9090",
+      //     fhirServiceUrl: "https://api.logicahealth.org/Testapalooza/open",
+      //     scope: "patient/Patient.read online_access openid profile offline_access patient/Observation.read launch fhirUser"
+      // });
 
-      // FHIR.oauth2.ready()
-      //     .then(client => client.request("Patient"))
-      //     .then(console.log)
-      //     .catch(console.error);
+      FHIR.oauth2.ready()
+          .then(client => client.request("Patient"))
+          .then(console.log)
+          .catch(console.error);
     </script>
   </head>
   <body>

@@ -15,10 +15,10 @@
             </b-card-img-group>
         </div>
         <div id="stage-decision">
-            <router-link to="/recommendation/yes">
+            <router-link :to="{ name: 'recommendation', params: { id: $route.params.id } }" >
                 <img src="@/assets/yes.png">
             </router-link>
-            <router-link to="/recommendation/no">
+            <router-link to="/intro">
                 <img src="@/assets/no.png">
             </router-link>
         </div>
@@ -66,14 +66,15 @@ export default {
     getPic(index) {
         return require('../assets/' + this.stages[this.$route.params.id - 1][index]);
     }
-  },
-  computed: {
-     activeStage: function() {
-       return this.users.filter(function(u) {
-         return u.active
-     })
-   }
   }
+  //,
+//   computed: {
+//      activeStage: function() {
+//        return this.users.filter(function(u) {
+//          return u.active
+//      })
+//    }
+//   }
 
 }
 </script>
