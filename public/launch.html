@@ -4,13 +4,10 @@
 <head>
         <script src="./nativeFhir.js"></script>
         <script src="./fhir-client.js"></script>
-    <!-- <script src="//cdn.jsdelivr.net/npm/fhirclient@0.1.12/fhir-client.min.js"></script> -->
     <script>
         
-        console.log("LAUNCH PAGE!!!");
         FHIR.oauth2.authorize({
           client_id: "a35f1fea-3805-4bd1-bafd-848f42a9876c",
-          // redirect_uri: "http://localhost:9090",
           fhirServiceUrl: "https://api.logicahealth.org/Testapalooza/open",
           scope: "patient/Patient.read online_access openid profile offline_access patient/Observation.read launch fhirUser"
       });
