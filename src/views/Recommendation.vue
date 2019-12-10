@@ -16,7 +16,15 @@
                         <img class="info-button" src="@/assets/info.png" alt="info">
                     </a>
                     and should
-                    <span v-if="$route.params.id == 1">
+                    <span v-if="$route.params.id == 1 && (obs_info.valueCodeableConcept.text == '13' || obs_info.valueCodeableConcept.text == '14')">
+                        continue with the treatment prescribed and call your physician,
+                        <br>
+                        <strong>{{ pcp.fullnm }}</strong>, at <strong>{{ pcp.phone }}</strong>
+                        if symptoms worsen.
+                        <br>
+                        Please review the pressure ulcer prevention information below under "Additional Resources" for recommendations.
+                    </span>
+                    <span v-else-if="$route.params.id == 1">
                         call your physician,
                         <br>
                         <strong>{{ pcp.fullnm }}</strong>, at <strong>{{ pcp.phone }}</strong>.
@@ -28,14 +36,7 @@
                         <br>
                         <strong>{{ pcp.fullnm }}</strong>.
                     </span>
-                    <span v-if="$route.params.id == 1 && (obs_info.valueCodeableConcept.text == '13' || obs_info.valueCodeableConcept.text == '14')">
-                        continue with the treatment prescribed and call your physician,
-                        <br>
-                        <strong>{{ pcp.fullnm }}</strong>, at <strong>{{ pcp.phone }}</strong>
-                        if symptoms worsen.
-                        <br>
-                        Please review the pressure ulcer prevention information below under "Additional Resources" for recommendations.
-                    </span>
+                    
 
                 </h1>
             </div>
